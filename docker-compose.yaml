@@ -3,7 +3,7 @@ services:
     container_name: db_sql
     image: mysql:9.1.0
     volumes:
-      - ./event-vol:/var/lib/mysql
+      - ./volumen-api:/var/lib/mysql
     ports:
       - "3306:3306"
     environment:
@@ -15,7 +15,7 @@ services:
   
   phpMyAdmin:
     depends_on:
-      - db_sql
+      - db
     container_name: phpMyAdmin
     image: phpmyadmin:5.2.0-apache
     ports:
